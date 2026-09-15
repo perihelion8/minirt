@@ -1,5 +1,24 @@
 # minirt
 
+## Camera controls
+
+Hold keys for continuous free-flight movement:
+
+- **W / S**: forward / backward along the camera direction.
+- **A / D**: strafe left / right.
+- **Arrow keys**: look left / right / up / down.
+- **Space / C**: rise / descend along the world vertical axis.
+- **Left Shift**: move three times faster.
+- **Escape**: quit.
+
+Keys can be combined. Diagonal movement has the same speed as straight
+movement. Speed is 10 scene units per second (30 with Left Shift), and
+turn speed is 1.5 radians per second. Losing focus clears held keys.
+Elapsed time is capped at 0.25 seconds to avoid jumps after long stalls.
+Every moving frame renders the full **960 × 720** image, including shading
+and shadows. Frame rate depends on scene complexity and CPU speed.
+
+
 ## pipeline
 
 input -> update -> render -> display

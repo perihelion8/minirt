@@ -6,7 +6,7 @@
 /*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 12:57:41 by abazzoun          #+#    #+#             */
-/*   Updated: 2026/09/12 11:03:23 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/15 10:15:28 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ENGINE_H
 
 # include "scene.h"
+# include "../src/engine/input/handle_key.h"
 
 typedef	struct s_graphicsctx	t_graphicsctx;	
 typedef	struct s_engine
@@ -22,6 +23,8 @@ typedef	struct s_engine
 	t_graphicsctx	*graphics;
 	int				dirty;
 	int				running;
+	int				keys[INPUT_COUNT];
+	double			last_tick;
 }								t_engine;
 
 int			engine_init(t_engine *engine, t_scene *scene);

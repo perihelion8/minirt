@@ -6,19 +6,44 @@
 /*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 09:04:49 by abazzoun          #+#    #+#             */
-/*   Updated: 2026/09/12 10:47:47 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/15 09:57:58 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <sys/time.h>
 #include "engine_internal.h"
+#include "action/action.h"
 #include "input/handle_key.h"
 #include "renderer.h"
+
+static double	elapsed_time(t_engine *engine)
+{
+	struct timeval	now;
+	double			current;
+	double			elapsed;
+
+	if (gettimeofday(&now, NULL) != 0)
+		return (0);
+	current = now.tv_sec + now.tv_usec / 1000000.0;
+	elapsed = 0;
+	if (engine->last_tick != 0)
+		elapsed = current - engine->last_tick;
+	engine->last_tick = current;
+	if (elapsed < 0)
+		elapsed = 0;
+	if (elapsed > 0.25)
+		elapsed = 0.25;
+	return (elapsed);
+}
 
 static int	engine_tick(void *param)
 {
 	t_engine	*engine;
 
 	engine = param;
+	if (!engine->running)
+		return (0);
+	action_update(engine, elapsed_time(engine));
 	if (!engine->dirty)
 		return (0);
 	render_scene(engine->scene, graphicsctx_image(engine->graphics));
@@ -29,6 +54,8 @@ static int	engine_tick(void *param)
 
 void	engine_run(t_engine *engine)
 {
+	graphicsctx_on_input(engine->graphics, handle_key_release,
+		handle_focus_out, engine);
 	graphicsctx_on_close(engine->graphics, handle_close, engine);
 	graphicsctx_run(engine->graphics, handle_key, engine_tick, engine);
 }

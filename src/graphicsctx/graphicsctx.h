@@ -6,7 +6,7 @@
 /*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 12:57:19 by abazzoun          #+#    #+#             */
-/*   Updated: 2026/09/14 11:48:48 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/15 10:10:07 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void			graphicsctx_run(t_graphicsctx *ctx, t_key_hook key_hook,
 					t_hook loop_hook, void *param);
 void			graphicsctx_on_close(t_graphicsctx *ctx,
 					t_hook close_hook, void *param);
+void			graphicsctx_on_input(t_graphicsctx *ctx,
+					t_key_hook release_hook, t_hook focus_hook, void *param);
 void			graphicsctx_stop(t_graphicsctx *ctx);
 void			graphicsctx_present(t_graphicsctx *ctx);
 t_image			*graphicsctx_image(t_graphicsctx *ctx);

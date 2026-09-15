@@ -6,7 +6,7 @@
 /*   By: abazzoun <abazzoun@student.42beirut.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 21:56:33 by abazzoun          #+#    #+#             */
-/*   Updated: 2026/09/12 11:50:12 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/15 10:07:12 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	engine_init(t_engine *engine, t_scene *scene)
 {
-
+	handle_focus_out(engine);
 	engine->graphics = graphicsctx_create();
 	if (!engine->graphics)
 	{
@@ -35,3 +35,4 @@ void	engine_destroy(t_engine *engine)
 		graphicsctx_destroy(engine->graphics);
 	engine->graphics = NULL;
 }
+
