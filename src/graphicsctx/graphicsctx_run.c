@@ -40,3 +40,8 @@ void	graphicsctx_on_input(t_graphicsctx *ctx, t_key_hook release_hook,
 	mlx_hook(ctx->win, FocusOut, FocusChangeMask, focus_hook, param);
 }
 
+void	graphicsctx_on_expose(t_graphicsctx *ctx, t_hook expose_hook,
+			void *param)
+{
+	mlx_hook(ctx->win, Expose, ExposureMask, expose_hook, param);
+}

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser_line.c                                      :+:      :+:    :+:   */
+/*   parser_line_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -56,6 +56,8 @@ static int	parser_shape(t_shape **shapell, t_shape_type type, char **s,
 		return (parser_sphere(&shape->sphere, s, linenumber));
 	if (type == CYLINDER)
 		return (parser_cylinder(&shape->cylinder, s, linenumber));
+	if (type == HYPERBOLOID)
+		return (parser_hyperboloid(&shape->hyperboloid, s, linenumber));
 	return (0);
 }
 
@@ -78,9 +80,9 @@ int	parser_line(t_scene *scene, char *s, int linenumber)
 		ret = parser_shape(&scene->shapell, PLANE, &s, linenumber);
 	else if (accept_identifier(&s, "cy"))
 		ret = parser_shape(&scene->shapell, CYLINDER, &s, linenumber);
+	else if (accept_identifier(&s, "hy"))
+		ret = parser_shape(&scene->shapell, HYPERBOLOID, &s, linenumber);
 	else
 		return (unexpected(*s, linenumber), 0);
-	if (!ret)
-		return (0);
-	return (expect_endl(s, linenumber));
+	return (ret && expect_endl(s, linenumber));
 }

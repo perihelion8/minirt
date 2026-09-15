@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   light.h                                            :+:      :+:    :+:   */
+/*   hyperboloid_bonus.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,19 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIGHT_H
-# define LIGHT_H
+#ifndef HYPERBOLOID_BONUS_H
+# define HYPERBOLOID_BONUS_H
 
 # include "color.h"
 # include "vector.h"
-# include "linkedlist.h"
 
-typedef struct s_light
+typedef struct s_hyperboloid
 {
-	t_nodell	node;
-	t_vec3		pos;
-	t_color		color;
-	double		ratio;
-}	t_light;
+	t_vec3	pos;
+	t_vec3	axis;
+	t_color	color;
+	double	diameter;
+	double	height;
+}	t_hyperboloid;
 
 #endif

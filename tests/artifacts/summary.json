@@ -1,0 +1,43 @@
+{
+  "cases_per_build": 2788,
+  "runs": [
+    {
+      "build": "mandatory_san",
+      "exit": 0,
+      "completed": 2788,
+      "mismatches": [],
+      "mandatory_san_geometry": 0,
+      "mandatory_san_alloc_valid": 0,
+      "mandatory_san_alloc_allocation_mix": 0
+    },
+    {
+      "build": "mandatory_debug",
+      "exit": 0,
+      "completed": 2788,
+      "mismatches": [],
+      "mandatory_debug_geometry": 0,
+      "mandatory_debug_alloc_valid": 0,
+      "mandatory_debug_alloc_allocation_mix": 0
+    },
+    {
+      "build": "bonus_san",
+      "exit": 0,
+      "completed": 2788,
+      "mismatches": [],
+      "bonus_san_geometry": 0,
+      "bonus_san_alloc_valid": 0,
+      "bonus_san_alloc_allocation_mix": 0,
+      "bonus_san_alloc_hyperboloid_bonus": 0
+    },
+    {
+      "build": "bonus_debug",
+      "exit": 0,
+      "completed": 2788,
+      "mismatches": [],
+      "bonus_debug_geometry": 0,
+      "bonus_debug_alloc_valid": 0,
+      "bonus_debug_alloc_allocation_mix": 0,
+      "bonus_debug_alloc_hyperboloid_bonus": 0
+    }
+  ]
+}

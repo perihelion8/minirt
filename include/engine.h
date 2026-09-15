@@ -23,11 +23,13 @@ typedef	struct s_engine
 	t_graphicsctx	*graphics;
 	int				dirty;
 	int				running;
+	int				fullscreen_pressed;
 	int				keys[INPUT_COUNT];
 	double			last_tick;
 }								t_engine;
 
 int			engine_init(t_engine *engine, t_scene *scene);
+void		engine_toggle_fullscreen(t_engine *engine);
 void		engine_run(t_engine *engine);
 void		engine_stop(t_engine *engine);
 void		engine_destroy(t_engine *engine);

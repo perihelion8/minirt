@@ -13,19 +13,26 @@
 #include <stdio.h>
 #include "parser.h"
 
-int	parser_light(t_light *light, char **line, int linenumber)
+int	parser_light(t_light **lightll, char **line, int linenumber)
 {
-	if (light->seen)
+	t_light		*light;
+	t_nodell	*head;
+
+	if (*lightll)
 	{
 		parser_error(linenumber, "duplicate light declaration.");
 		return (0);
 	}
+	head = (t_nodell *)*lightll;
+	light = (t_light *)appendll(&head, sizeof(*light));
+	if (!light)
+		return (0);
+	*lightll = (t_light *)head;
 	if (!parser_vec3(&light->pos, line, linenumber))
 		return (0);
 	if (!parser_ratio(&light->ratio, line, linenumber))
 		return (0);
 	if (!parser_color(&light->color, line, linenumber))
 		return (0);
-	light->seen = 1;
 	return (1);
 }

@@ -1,0 +1,113 @@
+color.c: OK!
+main.c: OK!
+vec3_arithmetic.c: OK!
+vec3_basis.c: OK!
+floating_point.c: OK!
+quadratic.c: OK!
+floating_point_internal.h: OK!
+vec3_products.c: OK!
+vec3_metrics.c: OK!
+cylinder_transforms.c: Error!
+Error: CONSECUTIVE_NEWLINES (line:  13, col:   1):	Consecutive newlines
+Error: EMPTY_LINE_EOF       (line:  13, col:   1):	Empty line at end of file
+camera.c: OK!
+scene.c: Error!
+Error: CONSECUTIVE_SPC      (line:  37, col:  19):	[94mTwo or more consecutives spaces[0m
+parser_int.c: OK!
+parser_vec3.c: OK!
+parser.h: Error!
+Error: TOO_MANY_ARGS        (line:  23, col:  24):	[91mFunction has more than 4 arguments[0m
+parser_hyperboloid_bonus.c: OK!
+parser_ambient.c: OK!
+parser_line.c: OK!
+parser_shapes.c: OK!
+parser_utils.c: OK!
+parser_light_bonus.c: OK!
+get_next_line.h: OK!
+parser_color.c: OK!
+parser_double.c: OK!
+parser_line_bonus.c: OK!
+parser_camera.c: Error!
+Error: TOO_MANY_ARGS        (line:  18, col:  20):	[91mFunction has more than 4 arguments[0m
+Error: EOL_OPERATOR         (line:  39, col:  65):	Logic operator at the end of line
+loader_rt.c: Error!
+Error: TOO_MANY_LINES       (line:  86, col:   1):	Function has more than 25 lines
+parser_ratio.c: OK!
+parser_error.c: OK!
+parser_light.c: OK!
+get_next_line.c: OK!
+cylinder_transforms.c: OK!
+renderer_intersection_hit.c: OK!
+renderer_intersection.h: OK!
+renderer_intersection.c: Error!
+Error: TAB_INSTEAD_SPC      (line:  29, col:  54):	[94mFound tab when expecting space[0m
+renderer_ray.c: Error!
+Error: TAB_INSTEAD_SPC      (line:  32, col:  52):	[94mFound tab when expecting space[0m
+Error: SPC_BFR_OPERATOR     (line:  32, col:  53):	[94mmissing space before operator[0m
+cylinder_transforms.h: OK!
+renderer_intersection_sp.c: Error!
+Error: EOL_OPERATOR         (line:  30, col:  30):	Logic operator at the end of line
+Error: TOO_MANY_TAB         (line:  32, col:   1):	Extra tabs for indent level
+renderer_render.c: OK!
+renderer_shade.c: OK!
+renderer_ray.h: OK!
+renderer_shade.h: OK!
+renderer_intersection_cy.c: OK!
+renderer_intersection_bonus.c: OK!
+renderer_hyperboloid_bonus.c: OK!
+renderer_intersection_pl.c: OK!
+engine_running.c: OK!
+engine_internal.h: OK!
+engine.c: Error!
+Error: EMPTY_LINE_EOF       (line:  38, col:   1):	Empty line at end of file
+action.h: OK!
+action.c: Error!
+Error: TOO_FEW_TAB          (line:  48, col:   1):	Missing tabs for indent level
+handle_key.c: OK!
+handle_key.h: OK!
+image_internal.h: OK!
+image.c: Error!
+Error: SPACE_AFTER_KW       (line:  37, col:  15):	Missing space after keyword
+Error: SPACE_AFTER_KW       (line:  42, col:  15):	Missing space after keyword
+Error: CONSECUTIVE_NEWLINES (line:  50, col:   1):	Consecutive newlines
+Error: EMPTY_LINE_FUNCTION  (line:  50, col:   1):	Empty line in function
+Error: SPACE_EMPTY_LINE     (line:  50, col:   1):	Space on empty line
+graphicsctx_run.c: OK!
+graphicsctx.h: Error!
+Error: PREPROC_BAD_INDENT   (line:  19, col:   1):	Bad preprocessor indentation
+Error: NO_ARGS_VOID         (line:  33, col:  37):	Empty function argument requires void
+Error: TOO_FEW_TAB          (line:  40, col:   1):	Missing tabs for indent level
+graphicsctx.c: Error!
+Error: NO_ARGS_VOID         (line:  19, col:  37):	Empty function argument requires void
+Error: TOO_MANY_LINES       (line:  49, col:   1):	Function has more than 25 lines
+linkedlist.c: OK!
+linkedlist.h: Error!
+Error: PREPROC_BAD_INDENT   (line:  16, col:   1):	Bad preprocessor indentation
+renderer.h: OK!
+vector.h: OK!
+color.h: OK!
+loader.h: OK!
+engine.h: Error!
+Error: TAB_REPLACE_SPACE    (line:  19, col:   1):	Found tab when expecting space
+Error: TAB_REPLACE_SPACE    (line:  20, col:   1):	Found tab when expecting space
+scene.h: Error!
+Error: MISSING_TYPEDEF_ID   (line:  26, col:   1):	Missing identifier in typedef declaration
+Error: BRACE_NEWLINE        (line:  26, col:  14):	[93mExpected newline before brace[0m
+Error: TOO_MANY_TAB         (line:  27, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  28, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  29, col:   1):	Extra tabs for indent level
+Error: TOO_MANY_TAB         (line:  30, col:   1):	Extra tabs for indent level
+Error: BRACE_NEWLINE        (line:  37, col:  11):	[93mExpected newline before brace[0m
+Error: SPACE_EMPTY_LINE     (line:  44, col:   1):	Space on empty line
+image.h: Error!
+Error: PREPROC_BAD_INDENT   (line:  16, col:   1):	Bad preprocessor indentation
+quadratic.h: OK!
+floating_point.h: OK!
+camera.h: OK!
+cylinder.h: Error!
+Error: CONSECUTIVE_NEWLINES (line:  30, col:   1):	Consecutive newlines
+sphere.h: OK!
+hyperboloid_bonus.h: OK!
+light.h: OK!
+ambient.h: OK!
+plane.h: OK!

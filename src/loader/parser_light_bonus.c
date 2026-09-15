@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser_ratio.c                                     :+:      :+:    :+:   */
+/*   parser_light_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/10 10:41:44 by abazzoun          #+#    #+#             */
-/*   Updated: 2026/09/11 09:52:11 by abazzoun         ###   ########.fr       */
+/*   Created: 2026/09/09 02:55:18 by abazzoun          #+#    #+#             */
+/*   Updated: 2026/09/10 21:43:05 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "parser.h"
 
-int	parser_ratio(double *dst, char **s, int linenumber)
+int	parser_light(t_light **lightll, char **line, int linenumber)
 {
-	if (!parser_double(dst, s, linenumber))
-		return (0);
-	if (*dst < 0.0 || *dst > 1.0)
-	{
-		parser_error(linenumber, "ratio must be between 0 and 1.");
-		return (0);
-	}
-	return (1);
-}
+	t_light		*light;
+	t_nodell	*head;
 
-int	parser_dimension(double *dst, char **s, int linenumber)
-{
-	if (!parser_double(dst, s, linenumber))
+	head = (t_nodell *)*lightll;
+	light = (t_light *)appendll(&head, sizeof(*light));
+	if (!light)
 		return (0);
-	if (*dst <= 0.0)
-	{
-		parser_error(linenumber, "dimension must be positive.");
+	*lightll = (t_light *)head;
+	if (!parser_vec3(&light->pos, line, linenumber))
 		return (0);
-	}
+	if (!parser_ratio(&light->ratio, line, linenumber))
+		return (0);
+	if (!parser_color(&light->color, line, linenumber))
+		return (0);
 	return (1);
 }

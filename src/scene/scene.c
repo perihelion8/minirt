@@ -24,12 +24,14 @@ void	scene_destroy(t_scene *scene)
 	if (scene->shapell)
 		destroyll((t_nodell *)scene->shapell);
 	scene->shapell = NULL;
+	destroyll((t_nodell *)scene->lightll);
+	scene->lightll = NULL;
 }
 
 void	scene_init(t_scene *scene)
 {
 	scene->ambient.seen = 0;
-	scene->light.seen = 0;
+	scene->lightll = NULL;
 	scene->camera.seen = 0;
 	scene->shapell = NULL;
 	scene->width =  WINDOW_WIDTH;

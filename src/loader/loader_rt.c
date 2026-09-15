@@ -41,7 +41,7 @@ static int	open_file(const char *filename)
 
 static int	validate_scene(t_scene *scene)
 {
-	if (!scene->camera.seen || !scene->light.seen || !scene->ambient.seen)
+	if (!scene->camera.seen || !scene->lightll || !scene->ambient.seen)
 	{
 		loader_error("Ambient, light and camera are necessary.");
 		return (0);

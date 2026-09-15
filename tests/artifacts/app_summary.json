@@ -1,0 +1,207 @@
+[
+  {
+    "name": "app_mandatory_debug_no_args",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_mandatory_debug_extra_args",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_mandatory_debug_missing",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_mandatory_debug_wrong_extension",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_mandatory_debug_directory",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_mandatory_debug_empty",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_mandatory_debug_bad_number",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_mandatory_debug_nul",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_mandatory_debug_no_display",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_mandatory_san_no_args",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_mandatory_san_extra_args",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_mandatory_san_missing",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_mandatory_san_wrong_extension",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_mandatory_san_directory",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_mandatory_san_empty",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_mandatory_san_bad_number",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_mandatory_san_nul",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_mandatory_san_no_display",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_bonus_debug_no_args",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_bonus_debug_extra_args",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_bonus_debug_missing",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_bonus_debug_wrong_extension",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_bonus_debug_directory",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_bonus_debug_empty",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_bonus_debug_bad_number",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_bonus_debug_nul",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_bonus_debug_no_display",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_bonus_san_no_args",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_bonus_san_extra_args",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_bonus_san_missing",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_bonus_san_wrong_extension",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_bonus_san_directory",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_bonus_san_empty",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_bonus_san_bad_number",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_bonus_san_nul",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "app_bonus_san_no_display",
+    "exit": 1,
+    "pass": true
+  },
+  {
+    "name": "gui_mandatory_san_exercise",
+    "exit": 0,
+    "pass": true
+  },
+  {
+    "name": "gui_bonus_san_exercise",
+    "exit": 0,
+    "pass": true
+  },
+  {
+    "name": "gui_mandatory_debug_close",
+    "exit": 0,
+    "pass": true
+  },
+  {
+    "name": "gui_bonus_debug_close",
+    "exit": 0,
+    "pass": true
+  },
+  {
+    "name": "gui_bonus_san_escape",
+    "exit": 0,
+    "pass": true
+  }
+]

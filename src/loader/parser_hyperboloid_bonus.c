@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   light.h                                            :+:      :+:    :+:   */
+/*   parser_hyperboloid_bonus.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,19 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIGHT_H
-# define LIGHT_H
+#include "parser.h"
 
-# include "color.h"
-# include "vector.h"
-# include "linkedlist.h"
-
-typedef struct s_light
+int	parser_hyperboloid(t_hyperboloid *hp, char **s, int linenumber)
 {
-	t_nodell	node;
-	t_vec3		pos;
-	t_color		color;
-	double		ratio;
-}	t_light;
-
-#endif
+	if (!parser_vec3(&hp->pos, s, linenumber))
+		return (0);
+	if (!parser_vec3_normal(&hp->axis, s, linenumber))
+		return (0);
+	hp->axis = vec3_normal(hp->axis);
+	if (!parser_dimension(&hp->diameter, s, linenumber))
+		return (0);
+	if (!parser_dimension(&hp->height, s, linenumber))
+		return (0);
+	return (parser_color(&hp->color, s, linenumber));
+}

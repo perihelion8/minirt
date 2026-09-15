@@ -52,8 +52,19 @@ static int	engine_tick(void *param)
 	return (0);
 }
 
+static int	engine_expose(void *param)
+{
+	t_engine	*engine;
+
+	engine = param;
+	engine->dirty = 1;
+	return (0);
+}
+
 void	engine_run(t_engine *engine)
 {
+	graphicsctx_on_resize(engine->graphics, engine_resize, engine);
+	graphicsctx_on_expose(engine->graphics, engine_expose, engine);
 	graphicsctx_on_input(engine->graphics, handle_key_release,
 		handle_focus_out, engine);
 	graphicsctx_on_close(engine->graphics, handle_close, engine);

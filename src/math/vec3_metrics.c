@@ -21,7 +21,7 @@ double	vec3_length_squared(t_vec3 v)
 
 double	vec3_length(t_vec3 v)
 {
-	return (sqrt(vec3_length_squared(v)));
+	return (hypot(hypot(v.x, v.y), v.z));
 }
 
 t_vec3	vec3_normal(t_vec3 v)

@@ -41,6 +41,8 @@ int	handle_key(int keycode, void *param)
 {
 	if (keycode == XK_Escape)
 		engine_stop(param);
+	else if (keycode == XK_F11)
+		engine_toggle_fullscreen(param);
 	else
 		set_key(param, keycode, 1);
 	return (0);
@@ -48,6 +50,8 @@ int	handle_key(int keycode, void *param)
 
 int	handle_key_release(int keycode, void *param)
 {
+	if (keycode == XK_F11)
+		((t_engine *)param)->fullscreen_pressed = 0;
 	set_key(param, keycode, 0);
 	return (0);
 }
@@ -62,5 +66,6 @@ int	handle_focus_out(void *param)
 	while (i < INPUT_COUNT)
 		engine->keys[i++] = 0;
 	engine->last_tick = 0;
+	engine->fullscreen_pressed = 0;
 	return (0);
 }

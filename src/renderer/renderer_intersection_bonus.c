@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   renderer_intersection.c                            :+:      :+:    :+:   */
+/*   renderer_intersection_bonus.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abazzoun <abazzoun@student.42beirut.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -26,7 +26,9 @@ static t_hit	intersect_shape(t_ray ray, t_shape *shape)
 	if (shape->type == SPHERE)
 		return (intersect_sp(ray, &shape->sphere));
 	if (shape->type == CYLINDER)
-		return (intersect_cy(ray, &shape->cylinder));	
+		return (intersect_cy(ray, &shape->cylinder));
+	if (shape->type == HYPERBOLOID)
+		return (intersect_hp(ray, &shape->hyperboloid));
 	return (no_hit());
 }
 

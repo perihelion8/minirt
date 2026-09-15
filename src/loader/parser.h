@@ -22,7 +22,8 @@ int		parser_line(t_scene *scene, char *s, int linenumber);
 int		parser_camera(t_camera *camera, char **s, int linenumber, int width,
 			int height);
 int		parser_ambient(t_ambient *ambient, char **s, int linenumber);
-int		parser_light(t_light *light, char **s, int linenumber);
+int		parser_light(t_light **lightll, char **s, int linenumber);
+int		parser_hyperboloid(t_hyperboloid *hp, char **s, int linenumber);
 int		parser_plane(t_plane *plane, char **s, int linenumber);
 int		parser_sphere(t_sphere *sphere, char **s, int linenumber);
 int		parser_cylinder(t_cylinder *cylinder, char **s, int linenumber);

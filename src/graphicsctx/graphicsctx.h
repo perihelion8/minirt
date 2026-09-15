@@ -31,11 +31,17 @@ typedef int	(*t_key_hook)(int keycode, void *param);
 typedef int	(*t_hook)(void *param);
 
 t_graphicsctx	*graphicsctx_create();
+void			graphicsctx_window_setup(t_graphicsctx *ctx);
+void			graphicsctx_toggle_fullscreen(t_graphicsctx *ctx);
+int				graphicsctx_sync_size(t_graphicsctx *ctx);
+void			graphicsctx_on_resize(t_graphicsctx *ctx, t_hook hook, void *param);
 void			graphicsctx_destroy(t_graphicsctx *ctx);
 void			graphicsctx_run(t_graphicsctx *ctx, t_key_hook key_hook,
 					t_hook loop_hook, void *param);
 void			graphicsctx_on_close(t_graphicsctx *ctx,
 					t_hook close_hook, void *param);
+void			graphicsctx_on_expose(t_graphicsctx *ctx, t_hook expose_hook,
+				void *param);
 void			graphicsctx_on_input(t_graphicsctx *ctx,
 					t_key_hook release_hook, t_hook focus_hook, void *param);
 void			graphicsctx_stop(t_graphicsctx *ctx);

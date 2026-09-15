@@ -32,6 +32,7 @@ t_hit	find_closest_intersection(t_scene *scene, t_ray ray);
 t_hit	find_intersection(t_scene *scene, t_ray ray);
 t_hit	intersect_sp(t_ray ray, const t_sphere *sphere);
 t_hit	intersect_cy(t_ray ray, const t_cylinder *cylinder);
+t_hit	intersect_hp(t_ray ray, const t_hyperboloid *hp);
 t_hit	intersect_pl(t_ray ray, const t_plane *plane);
 
 #endif

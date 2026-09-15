@@ -21,22 +21,13 @@ static int	clamp(double n)
 	return ((int)n);
 }
 
-static t_color	add_colors(t_color a, t_color b)
+static t_vec3	apply_light(t_color object, t_color light, double strength)
 {
-	return ((t_color){
-		clamp((double)(a.r + b.r)),
-		clamp((double)(a.g + b.g)),
-		clamp((double)(a.b + b.b))
-	});
-}
+	t_vec3	result;
 
-static t_color	apply_light(t_color object, t_color light, double strength)
-{
-	t_color	result;
-
-	result.r = clamp(object.r * (light.r / 255.0) * strength);
-	result.g = clamp(object.g * (light.g / 255.0) * strength);
-	result.b = clamp(object.b * (light.b / 255.0) * strength);
+	result.x = object.r * (light.r / 255.0) * strength;
+	result.y = object.g * (light.g / 255.0) * strength;
+	result.z = object.b * (light.b / 255.0) * strength;
 	return (result);
 }
 
@@ -58,19 +49,22 @@ static int	is_shadowed(t_scene *scene, const t_hit *hit, t_light *light)
 
 t_color	shade_hit(t_scene *scene, const t_hit *hit)
 {
-	t_color	ambient;
-	t_color	diffuse;
+	t_vec3	result;
+	t_light	*light;
 	t_vec3	light_direction;
 	double	lambert;
 
-	ambient = apply_light(hit->color, scene->ambient.color,
+	result = apply_light(hit->color, scene->ambient.color,
 			scene->ambient.ratio);
-	light_direction = vec3_subtract(scene->light.pos, hit->point);
-	light_direction = vec3_normal(light_direction);
-	lambert = vec3_dot(hit->normal, light_direction);
-	if (lambert <= 0.0 || is_shadowed(scene, hit, &scene->light))
-		return (ambient);
-	diffuse = apply_light(hit->color, scene->light.color,
-			scene->light.ratio * lambert);
-	return (add_colors(ambient, diffuse));
+	light = scene->lightll;
+	while (light)
+	{
+		light_direction = vec3_normal(vec3_subtract(light->pos, hit->point));
+		lambert = vec3_dot(hit->normal, light_direction);
+		if (lambert > 0.0 && !is_shadowed(scene, hit, light))
+			result = vec3_add(result, apply_light(hit->color, light->color,
+						light->ratio * lambert));
+		light = (t_light *)light->node.next;
+	}
+	return ((t_color){clamp(result.x), clamp(result.y), clamp(result.z)});
 }

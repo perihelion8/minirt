@@ -54,6 +54,8 @@ int	accept_identifier(char **s, const char *identifier)
 			return (0);
 		i++;
 	}
+	if (!ft_isspace((*s)[i]))
+		return (0);
 	*s = *s + i;
 	return (1);
 }

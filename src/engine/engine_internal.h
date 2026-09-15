@@ -16,4 +16,6 @@
 # include "engine.h"
 # include "../graphicsctx/graphicsctx.h"
 
+int	engine_resize(void *param);
+
 #endif

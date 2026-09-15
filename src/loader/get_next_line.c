@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <errno.h>
 #include <unistd.h>
 #include "libft.h"
 #include "get_next_line.h"
@@ -47,6 +48,8 @@ static int	read_until_newline(int fd, char *buffer, char **line)
 		bytes = read(fd, buffer, BUFFER_SIZE);
 		if (bytes < 0)
 			return (0);
+		if (ft_memchr(buffer, '\0', bytes))
+			return (errno = EINVAL, 0);
 		buffer[bytes] = '\0';
 		if (bytes == 0)
 			return (1);

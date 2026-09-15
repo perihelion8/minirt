@@ -20,12 +20,14 @@
 # include "scene/sphere.h"
 # include "scene/plane.h"
 # include "scene/cylinder.h"
+# include "scene/hyperboloid_bonus.h"
 # include "linkedlist.h"
 
 typedef enum {
 		PLANE,
 		SPHERE,
-		CYLINDER
+		CYLINDER,
+		HYPERBOLOID
 }	t_shape_type;
 
 typedef struct s_shape
@@ -33,9 +35,10 @@ typedef struct s_shape
 	t_nodell		node;
 	t_shape_type	type;
 	union {
-		t_plane		plane;
-		t_sphere	sphere;
-		t_cylinder	cylinder;
+		t_plane			plane;
+		t_sphere		sphere;
+		t_cylinder		cylinder;
+		t_hyperboloid	hyperboloid;
 	};
 }	t_shape;
 		
@@ -45,7 +48,7 @@ typedef struct s_scene
 	double		height;
 	t_ambient	ambient;
 	t_camera	camera;
-	t_light		light;
+	t_light		*lightll;
 	t_shape		*shapell;
 }	t_scene;
 

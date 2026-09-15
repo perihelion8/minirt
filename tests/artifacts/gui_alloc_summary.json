@@ -1,0 +1,57 @@
+[
+  {
+    "allocation": 0,
+    "exit": 0,
+    "output": "GUI allocations=4 fail=0 initialized=1\n"
+  },
+  {
+    "allocation": 1,
+    "exit": 0,
+    "output": "GUI allocations=1 fail=1 initialized=0\n"
+  },
+  {
+    "allocation": 2,
+    "exit": 0,
+    "output": "GUI allocations=2 fail=2 initialized=0\n"
+  },
+  {
+    "allocation": 3,
+    "exit": 0,
+    "output": "GUI allocations=3 fail=3 initialized=0\n"
+  },
+  {
+    "allocation": 4,
+    "exit": 0,
+    "output": "GUI allocations=6 fail=4 initialized=1\n"
+  },
+  {
+    "allocation": -1,
+    "exit": 0,
+    "output": "GUI allocations=1 fail=-1 initialized=0\n"
+  },
+  {
+    "allocation": -2,
+    "exit": 0,
+    "output": "GUI allocations=2 fail=-2 initialized=0\n"
+  },
+  {
+    "allocation": -3,
+    "exit": 0,
+    "output": "GUI allocations=3 fail=-3 initialized=0\n"
+  },
+  {
+    "allocation": -4,
+    "exit": 0,
+    "output": "GUI allocations=5 fail=-4 initialized=0\n"
+  },
+  {
+    "allocation": "4_and_5",
+    "exit": 0,
+    "output": "GUI allocations=5 fail=4 initialized=0\n"
+  },
+  {
+    "allocation": "4_and_6",
+    "exit": 0,
+    "output": "GUI allocations=6 fail=4 initialized=0\n"
+  }
+]

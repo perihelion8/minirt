@@ -1,0 +1,14 @@
+[
+  {
+    "kind": "shapes",
+    "extra_nodes": 20000,
+    "exit": 0,
+    "seconds": 1.058
+  },
+  {
+    "kind": "lights",
+    "extra_nodes": 20000,
+    "exit": 0,
+    "seconds": 0.527
+  }
+]

@@ -45,6 +45,7 @@ t_graphicsctx	*graphicsctx_create()
 		graphicsctx_destroy(ctx);
 		return (NULL);
 	}
+	graphicsctx_window_setup(ctx);
 	return (ctx);
 }
 
