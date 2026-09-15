@@ -6,12 +6,12 @@
 /*   By: abazzoun <abazzoun@student.42beirut.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 21:57:02 by abazzoun          #+#    #+#             */
-/*   Updated: 2026/09/09 14:02:00 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/12 09:49:46 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "action.h"
-#include "../engine_internal.h"
+#include "engine.h"
 
 void	action_apply(void *param, t_action action)
 {

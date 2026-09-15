@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   image_internal.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abazzoun <abazzoun@student.42beirut.com>   +#+  +:+       +#+        */
+/*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/18 21:56:18 by abazzoun          #+#    #+#             */
-/*   Updated: 2026/08/18 21:56:19 by abazzoun         ###   ########.fr       */
+/*   Created: 2026/09/10 12:56:59 by abazzoun          #+#    #+#             */
+/*   Updated: 2026/09/12 15:58:37 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 # define IMAGE_INTERNAL_H
 
 # include "image.h"
+# include "color.h"
 
-struct s_image
+typedef struct s_image
 {
 	int		width;
 	int		height;
@@ -24,8 +25,8 @@ struct s_image
 	int		bpp;
 	int		line_len;
 	int		pixel_order;
-};
+}	t_image;
 
-int	image_init(t_image *image, void *mlx, int width, int height);
+int		image_init(t_image *image, void *mlx, int width, int height);
 
 #endif

@@ -6,11 +6,9 @@
 /*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 16:36:48 by abazzoun          #+#    #+#             */
-/*   Updated: 2025/06/05 17:14:03 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/10 16:08:08 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 static int	isupper(int c)
 {

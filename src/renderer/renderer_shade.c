@@ -6,7 +6,7 @@
 /*   By: abazzoun <abazzoun@student.42beirut.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 21:52:32 by abazzoun          #+#    #+#             */
-/*   Updated: 2026/09/09 17:51:59 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/12 15:42:22 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ static int	is_shadowed(t_scene *scene, const t_hit *hit, t_light *light)
 			vec3_scale(hit->normal, RENDER_SHADOW_BIAS));
 	to_light = vec3_subtract(light->pos, shadow_ray.origin);
 	light_distance = vec3_length(to_light);
-	shadow_ray.direction = vec3_normalize(to_light);
+	shadow_ray.direction = vec3_normal(to_light);
 	blocker = find_closest_intersection(scene, shadow_ray);
-	return (blocker.hit && blocker.t < light_distance);
+	return (blocker.hit && blocker.t < light_distance - RENDER_SHADOW_BIAS);
 }
 
 t_color	shade_hit(t_scene *scene, const t_hit *hit)
@@ -66,7 +66,7 @@ t_color	shade_hit(t_scene *scene, const t_hit *hit)
 	ambient = apply_light(hit->color, scene->ambient.color,
 			scene->ambient.ratio);
 	light_direction = vec3_subtract(scene->light.pos, hit->point);
-	light_direction = vec3_normalize(light_direction);
+	light_direction = vec3_normal(light_direction);
 	lambert = vec3_dot(hit->normal, light_direction);
 	if (lambert <= 0.0 || is_shadowed(scene, hit, &scene->light))
 		return (ambient);

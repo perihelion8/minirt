@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   camera.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: abazzoun <abazzoun@student.42beirut.com>   +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/18 21:50:48 by abazzoun          #+#    #+#             */
-/*   Updated: 2026/08/18 21:50:49 by abazzoun         ###   ########.fr       */
-/*                                                                            */
+/*																			  */
+/*														  :::	   ::::::::   */
+/*	 camera.c											:+:		 :+:	:+:   */
+/*													  +:+ +:+		  +:+	  */
+/*	 By: abazzoun <abazzoun@student.42beirut.com>	+#+  +:+	   +#+		  */
+/*												  +#+#+#+#+#+	+#+			  */
+/*	 Created: 2026/08/18 21:50:48 by abazzoun		   #+#	  #+#			  */
+/*	 Updated: 2026/08/18 21:50:49 by abazzoun		  ###	########.fr		  */
+/*																			  */
 /* ************************************************************************** */
 
 #include <math.h>
@@ -43,8 +43,8 @@ void	camera_rotate_right(t_camera *camera, double angle)
 	camera->right = vec3_subtract(
 			vec3_scale(old_right, cos_angle),
 			vec3_scale(old_forward, sin_angle));
-	camera->forward = vec3_normalize(camera->forward);
-	camera->right = vec3_normalize(camera->right);
+	camera->forward = vec3_normal(camera->forward);
+	camera->right = vec3_normal(camera->right);
 }
 
 void	camera_rotate_left(t_camera *camera, double angle)

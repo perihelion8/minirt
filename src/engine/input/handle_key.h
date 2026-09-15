@@ -6,7 +6,7 @@
 /*   By: abazzoun <abazzoun@student.42beirut.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 21:56:50 by abazzoun          #+#    #+#             */
-/*   Updated: 2026/08/18 21:56:51 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/10 20:13:04 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # define KEY_A 97
 # define KEY_D 100
 
+int	handle_close(void *param);
 int	handle_key(int keycode, void *param);
 
 #endif

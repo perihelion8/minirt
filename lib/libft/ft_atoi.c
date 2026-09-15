@@ -6,11 +6,9 @@
 /*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 10:50:04 by a                 #+#    #+#             */
-/*   Updated: 2025/06/05 16:47:30 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/10 16:02:39 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {

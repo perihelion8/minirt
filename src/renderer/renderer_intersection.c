@@ -6,7 +6,7 @@
 /*   By: abazzoun <abazzoun@student.42beirut.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 21:51:03 by abazzoun          #+#    #+#             */
-/*   Updated: 2026/09/09 15:46:05 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/15 09:45:27 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,55 +19,46 @@ static void	update_closest(t_hit *closest, t_hit candidate)
 		*closest = candidate;
 }
 
+static t_hit	intersect_shape(t_ray ray, t_shape *shape)
+{
+	if (shape->type == PLANE)
+		return (intersect_pl(ray, &shape->plane));
+	if (shape->type == SPHERE)
+		return (intersect_sp(ray, &shape->sphere));
+	if (shape->type == CYLINDER)
+		return (intersect_cy(ray, &shape->cylinder));	
+	return (no_hit());
+}
+
 t_hit	find_closest_intersection(t_scene *scene, t_ray ray)
 {
 	t_hit		closest;
 	t_hit		candidate;
-	t_sphere	*sphere;
-	t_plane		*plane;
-	t_cylinder	*cylinder;
+	t_shape		*shape;
 
 	closest = (t_hit){0};
-	sphere = scene->spherell;
-	while (sphere)
+	shape = scene->shapell;
+	while (shape)
 	{
-		candidate = intersect_sphere(ray, sphere);
+		candidate = intersect_shape(ray, shape);
 		update_closest(&closest, candidate);
-		sphere = sphere->next;
-	}
-	plane = scene->planell;
-	while (plane)
-	{
-		candidate = intersect_plane(ray, plane);
-		update_closest(&closest, candidate);
-		plane = plane->next;
-	}
-	cylinder = scene->cylinderll;
-	while (cylinder)
-	{
-		candidate = intersect_cylinder(ray, cylinder);
-		update_closest(&closest, candidate);
-		cylinder = cylinder->next;
+		shape = (t_shape *)shape->node.next;
 	}
 	return (closest);
 }
 
-t_hit	make_hit(double t, t_vec3 point, t_vec3 normal, t_color color)
+t_hit	find_intersection(t_scene *scene, t_ray ray)
 {
+	t_shape	*shape;
 	t_hit	hit;
 
-	hit.hit = 1;
-	hit.t = t;
-	hit.point = point;
-	hit.normal = vec3_normalize(normal);
-	hit.color = color;
-	return (hit);
-}
-
-t_hit	no_hit(void)
-{
-	t_hit	hit;
-
-	hit.hit = 0;
-	return (hit);
+	shape = scene->shapell;
+	while (shape)
+	{
+		hit = intersect_shape(ray, shape);
+		if (hit.hit)
+			return (hit);
+		shape = (t_shape *)shape->node.next;
+	}
+	return (no_hit());
 }

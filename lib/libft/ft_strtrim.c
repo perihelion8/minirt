@@ -6,10 +6,11 @@
 /*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 12:35:30 by a                 #+#    #+#             */
-/*   Updated: 2025/09/12 20:00:42 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/10 16:21:57 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strtrim(const char *s, const char *set)

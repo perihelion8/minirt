@@ -10,11 +10,13 @@ SRC_DIR		:= src
 OBJ_DIR		:= obj
 SRC			:= $(SRC_DIR)/main.c \
 			   $(SRC_DIR)/color.c \
+			   $(SRC_DIR)/linkedlist/linkedlist.c \
 			   $(SRC_DIR)/engine/engine.c \
+			   $(SRC_DIR)/engine/engine_running.c \
 			   $(SRC_DIR)/engine/input/handle_key.c \
 			   $(SRC_DIR)/engine/action/action.c \
 			   $(SRC_DIR)/graphicsctx/graphicsctx.c \
-			   $(SRC_DIR)/graphicsctx/graphicsctx_get.c \
+			   $(SRC_DIR)/graphicsctx/graphicsctx_run.c \
 			   $(SRC_DIR)/graphicsctx/image.c \
 			   $(SRC_DIR)/math/floating_point.c \
 			   $(SRC_DIR)/math/quadratic.c \
@@ -24,25 +26,28 @@ SRC			:= $(SRC_DIR)/main.c \
 			   $(SRC_DIR)/math/vec3_products.c \
 			   $(SRC_DIR)/loader/loader_rt.c \
 			   $(SRC_DIR)/loader/parser_ambient.c \
+			   $(SRC_DIR)/loader/parser_line.c \
 			   $(SRC_DIR)/loader/parser_camera.c \
 			   $(SRC_DIR)/loader/parser_color.c \
 			   $(SRC_DIR)/loader/parser_light.c \
 			   $(SRC_DIR)/loader/parser_shapes.c \
 			   $(SRC_DIR)/loader/parser_utils.c \
 			   $(SRC_DIR)/loader/parser_vec3.c \
-			   $(SRC_DIR)/loader/get_next_line.c \
 			   $(SRC_DIR)/loader/parser_double.c \
+			   $(SRC_DIR)/loader/parser_ratio.c \
 			   $(SRC_DIR)/loader/parser_int.c \
+			   $(SRC_DIR)/loader/parser_error.c \
+			   $(SRC_DIR)/loader/get_next_line.c \
 			   $(SRC_DIR)/renderer/renderer_intersection.c \
-			   $(SRC_DIR)/renderer/renderer_intersection_cylinder.c \
-			   $(SRC_DIR)/renderer/renderer_intersection_cylinder_utils.c \
-			   $(SRC_DIR)/renderer/renderer_intersection_plane.c \
-			   $(SRC_DIR)/renderer/renderer_intersection_sphere.c \
+			   $(SRC_DIR)/renderer/renderer_intersection_hit.c \
+			   $(SRC_DIR)/renderer/renderer_intersection_cy.c \
+			   $(SRC_DIR)/renderer/renderer_intersection_pl.c \
+			   $(SRC_DIR)/renderer/renderer_intersection_sp.c \
+			   $(SRC_DIR)/renderer/cylinder_transforms.c \
 			   $(SRC_DIR)/renderer/renderer_ray.c \
 			   $(SRC_DIR)/renderer/renderer_render.c \
 			   $(SRC_DIR)/renderer/renderer_shade.c \
 			   $(SRC_DIR)/scene/camera.c \
-			   $(SRC_DIR)/scene/shapes_append.c \
 			   $(SRC_DIR)/scene/scene.c
 OBJ			:= $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 

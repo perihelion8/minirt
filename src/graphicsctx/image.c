@@ -6,7 +6,7 @@
 /*   By: abazzoun <abazzoun@student.42beirut.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 21:56:04 by abazzoun          #+#    #+#             */
-/*   Updated: 2026/08/18 21:56:05 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/12 11:12:22 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,23 @@ int	image_init(t_image *image, void *mlx, int width, int height)
 	return (1);
 }
 
-int	image_width(const t_image *image)
+int	image_width(const void *image)
 {
-	return (image->width);
+	return (((t_image*)image)->width);
 }
 
-int	image_height(const t_image *image)
+int	image_height(const void *image)
 {
-	return (image->height);
+	return (((t_image*)image)->height);
 }
 
-void	image_put_pixel(t_image *img, int x, int y, t_color color)
+void	image_put_pixel(void *image, int x, int y, t_color color)
 {
 	char	*dst;
+	t_image	*img;
 
+	
+	img = image;
 	if (x < 0 || x >= img->width || y < 0 || y >= img->height)
 		return ;
 	dst = img->addr + (y * img->line_len + x * (img->bpp / 8));

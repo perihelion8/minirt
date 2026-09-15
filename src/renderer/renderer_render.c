@@ -6,11 +6,12 @@
 /*   By: abazzoun <abazzoun@student.42beirut.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 21:52:19 by abazzoun          #+#    #+#             */
-/*   Updated: 2026/09/09 17:46:27 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/12 11:13:32 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "image.h"
+#include "renderer.h"
 #include "renderer_ray.h"
 #include "renderer_intersection.h"
 #include "renderer_shade.h"
@@ -25,7 +26,7 @@ static t_color	trace_ray(t_scene *scene, t_ray ray)
 	return (shade_hit(scene, &hit));
 }
 
-void	render_scene(t_scene *scene, t_image *image)
+void	render_scene(t_scene *scene, void *image)
 {
 	t_pixel_coord	pixel;
 	int				width;

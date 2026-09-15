@@ -6,10 +6,11 @@
 /*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 13:48:41 by a                 #+#    #+#             */
-/*   Updated: 2025/06/05 16:58:54 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/10 16:20:56 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *s)

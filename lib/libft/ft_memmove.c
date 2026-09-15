@@ -6,11 +6,11 @@
 /*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 14:13:54 by abazzoun          #+#    #+#             */
-/*   Updated: 2025/09/17 13:54:59 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/10 16:11:23 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {

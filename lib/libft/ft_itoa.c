@@ -6,10 +6,11 @@
 /*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 13:05:54 by a                 #+#    #+#             */
-/*   Updated: 2025/06/17 16:37:53 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/10 16:08:54 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 static size_t	digits_count(int n)

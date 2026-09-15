@@ -6,7 +6,7 @@
 /*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/09 00:04:50 by abazzoun          #+#    #+#             */
-/*   Updated: 2026/09/09 17:19:55 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/11 10:06:42 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,45 @@
 #include "libft.h"
 #include "parser.h"
 
-void    unexpected(char c, int linenumber)
+void	unexpected(char c, int linenumber)
 {
-	printf("Error\n");
-	printf("rt_file: line %d: ", linenumber);
-    if (c)
-		printf("Unexpected token '%c'\n", c);
-    else
-		printf("Unexpected end of input\n");
+	if (c)
+		parser_error_token(linenumber, c);
+	else
+		parser_error(linenumber, "unexpected end of input");
 }
 
-int accept(char **s, char c)
+int	accept(char **s, char c)
 {
 	while (ft_isspace(**s))
 		(*s)++;
-    if (**s == c)
-    {
+	if (**s == c)
+	{
 		(*s)++;
 		return (1);
-    }
-    return (0);
+	}
+	return (0);
 }
 
-int expect(char **s, char c, int linenumber)
+int	expect(char **s, char c, int linenumber)
 {
 	if (accept(s, c))
 		return (1);
 	unexpected(**s, linenumber);
 	return (0);
+}
+
+int	accept_identifier(char **s, const char *identifier)
+{
+	int	i;
+
+	i = 0;
+	while (identifier[i])
+	{
+		if (!(*s)[i] || (*s)[i] != identifier[i])
+			return (0);
+		i++;
+	}
+	*s = *s + i;
+	return (1);
 }

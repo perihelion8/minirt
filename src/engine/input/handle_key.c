@@ -6,12 +6,18 @@
 /*   By: abazzoun <abazzoun@student.42beirut.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 21:56:46 by abazzoun          #+#    #+#             */
-/*   Updated: 2026/08/18 21:56:47 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/10 21:06:31 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "handle_key.h"
 #include "../action/action.h"
+
+int	handle_close(void *param)
+{
+	action_apply(param, ACTION_QUIT);
+	return (0);
+}
 
 int	handle_key(int keycode, void *param)
 {

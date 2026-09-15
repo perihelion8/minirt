@@ -6,7 +6,7 @@
 /*   By: abazzoun <abazzoun@student.42beirut.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 21:55:31 by abazzoun          #+#    #+#             */
-/*   Updated: 2026/08/18 22:08:48 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/10 17:54:05 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	vec3_are_parallel(t_vec3 a, t_vec3 b)
 	if (approximately_zero(vec3_length(a))
 		|| approximately_zero(vec3_length(b)))
 		return (0);
-	a = vec3_normalize(a);
-	b = vec3_normalize(b);
+	a = vec3_normal(a);
+	b = vec3_normal(b);
 	return (approximately_equal(fabs(vec3_dot(a, b)), 1.0));
 }

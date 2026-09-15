@@ -6,10 +6,11 @@
 /*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 14:21:28 by a                 #+#    #+#             */
-/*   Updated: 2025/09/17 13:56:32 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/10 16:20:34 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 static char	**split_create(const char *s, char c)

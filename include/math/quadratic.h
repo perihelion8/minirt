@@ -1,8 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   quadratic.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/10 12:58:13 by abazzoun          #+#    #+#             */
+/*   Updated: 2026/09/11 10:16:05 by abazzoun         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef QUADRATIC_H
 # define QUADRATIC_H
 
-double	quadratic_minimum_positive_root(double a, double b, double c);
-int		solve_quadratic(double a, double b, double c, double *root1,
-			double *root2);
+int		solve_quadratic(double a, double b, double c, double *root);
 
 #endif

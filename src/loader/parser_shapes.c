@@ -6,55 +6,52 @@
 /*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/09 00:04:34 by abazzoun          #+#    #+#             */
-/*   Updated: 2026/09/09 21:22:22 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/14 14:57:12 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "parser.h"
 
-int	parser_sphere(t_sphere **spherell, char **line, int linenumber)
+int	parser_sphere(t_sphere *sphere, char **s, int linenumber)
 {
-	t_sphere	*sphere;
-
-	sphere = spherell_append(spherell);
-	if (!parser_vec3(&sphere->pos, line, linenumber))
+	if (!sphere)
 		return (0);
-	if (!parser_double(&sphere->diameter, line, linenumber))
-		return(0);
-	if (!parser_color(&sphere->color, line, linenumber))
+	if (!parser_vec3(&sphere->pos, s, linenumber))
+		return (0);
+	if (!parser_dimension(&sphere->diameter, s, linenumber))
+		return (0);
+	if (!parser_color(&sphere->color, s, linenumber))
 		return (0);
 	return (1);
 }
 
-int	parser_plane(t_plane **planell, char **line, int linenumber)
+int	parser_plane(t_plane *plane, char **s, int linenumber)
 {
-	t_plane	*plane;
-
-	plane = planell_append(planell);
-	if (!parser_vec3(&plane->pos, line, linenumber))
+	if (!plane)
 		return (0);
-	if (!parser_vec3(&plane->normal, line, linenumber))
+	if (!parser_vec3(&plane->pos, s, linenumber))
 		return (0);
-	if (!parser_color(&plane->color, line, linenumber))
+	if (!parser_vec3_normal(&plane->normal, s, linenumber))
+		return (0);
+	if (!parser_color(&plane->color, s, linenumber))
 		return (0);
 	return (1);
 }
 
-int	parser_cylinder(t_cylinder **cylinderll, char **line, int linenumber)
+int	parser_cylinder(t_cylinder *cylinder, char **s, int linenumber)
 {
-	t_cylinder	*cylinder;
-
-	cylinder = cylinderll_append(cylinderll);
-	if (!parser_vec3(&cylinder->pos, line, linenumber))
+	if (!cylinder)
 		return (0);
-	if (!parser_vec3(&cylinder->axis, line, linenumber))
+	if (!parser_vec3(&cylinder->pos, s, linenumber))
 		return (0);
-	if (!parser_double(&cylinder->diameter, line, linenumber))
+	if (!parser_vec3_normal(&cylinder->axis, s, linenumber))
 		return (0);
-	if (!parser_double(&cylinder->height, line, linenumber))
+	if (!parser_dimension(&cylinder->diameter, s, linenumber))
 		return (0);
-	if (!parser_color(&cylinder->color, line, linenumber))
+	if (!parser_dimension(&cylinder->height, s, linenumber))
+		return (0);
+	if (!parser_color(&cylinder->color, s, linenumber))
 		return (0);
 	vec3_basis(&cylinder->axis, &cylinder->right, &cylinder->up);
 	return (1);

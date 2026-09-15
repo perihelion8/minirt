@@ -6,11 +6,11 @@
 /*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 14:13:04 by abazzoun          #+#    #+#             */
-/*   Updated: 2025/09/09 19:20:25 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/10 16:15:31 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
 size_t	ft_strlen(const char *s)
 {

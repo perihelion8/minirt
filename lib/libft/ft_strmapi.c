@@ -6,16 +6,17 @@
 /*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 19:10:55 by a                 #+#    #+#             */
-/*   Updated: 2025/06/17 16:31:23 by abazzoun         ###   ########.fr       */
+/*   Updated: 2026/09/10 16:16:07 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strmapi(const char *s, char (*f)(t_uint, char))
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	t_uint	i;
-	char	*mapped;
+	unsigned int	i;
+	char			*mapped;
 
 	if (s == NULL || f == NULL)
 		return (NULL);

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   graphicsctx_get.c                                  :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abazzoun <abazzoun@student.42beirut.com>   +#+  +:+       +#+        */
+/*   By: abazzoun <abazzoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/19 03:51:37 by abazzoun          #+#    #+#             */
-/*   Updated: 2026/08/19 03:52:21 by abazzoun         ###   ########.fr       */
+/*   Created: 2026/09/10 17:46:47 by abazzoun          #+#    #+#             */
+/*   Updated: 2026/09/12 14:06:39 by abazzoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "graphicsctx_internal.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-t_image	*graphicsctx_image(t_graphicsctx *ctx)
-{
-	return (&ctx->img);
-}
+# define BUFFER_SIZE 4096
+
+#endif
